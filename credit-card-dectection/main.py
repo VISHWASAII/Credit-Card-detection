@@ -8,9 +8,11 @@ from sklearn.metrics import classification_report
 import joblib  # For saving and loading the model
 import streamlit as st
 import json  # To parse the JSON input
+import os
 
+file_path = os.path.join(os.path.dirname(__file__), "creditcard.csv")
 # 🚀 STEP 1: Load the CSV dataset
-df = pd.read_csv("creditcard.csv")  # Replace with your CSV file path
+df = pd.read_csv(file_path)  # Replace with your CSV file path
 
 # 🚀 STEP 2: Prepare data (remove unwanted columns, handle missing values)
 df.fillna(0, inplace=True)
